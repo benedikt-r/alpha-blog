@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root 'pages#home'
   get 'about',to:'pages#about'
 
@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post 'login', to:'sessions#create'
   delete 'logout', to:'sessions#destroy'
 
+  resources :categories, except: [:destroy]
 
 end
